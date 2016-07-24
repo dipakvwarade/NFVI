@@ -21,12 +21,13 @@ HDD=`df -lh | awk '{if ($6 == "/") { print $5 }}' | head -1 | cut -d'%' -f1`
 MOUNT_RO=$(if mount|grep  -v rw >/tmp/ro_fs; then  echo "RO Mounts found check /tmp/ro_fs and investigate"; else echo "No Read Only Mounts Found"; fi)
 LOAD=$(uptime|awk '{print $10, $11 ,$12}')
 LINK_DOWN=$(ip link show|grep -i DOWN|wc -l)
-printf "CURRENT SWAP "\:" ${RED} $SWAP ${NC}\n"
-printf "CURRENT root partition "\:" ${RED} $HDD ${NC}\n"
-printf "CURRENT RAM "\:" ${RED} $RAM ${NC}\n"
+printf "CURRENT CPU USAGE %%"\:" ${RED} $CPU ${NC}\n"
+printf "CURRENT SWAP USAGE %%"\:" ${RED} $SWAP ${NC}\n"
+printf "CURRENT / USAGE %% "\:" ${RED} $HDD ${NC}\n"
+printf "CURRENT RAM USAGE %%"\:" ${RED} $RAM ${NC}\n"
 printf "Read Only Mounts "\:" ${RED} $MOUNT_RO ${NC}\n"
 printf "Current Load on the System 1min,5min,15min "\:" ${RED} $LOAD ${NC}\n"
-printf "TOTAL Links Down,Investigate if more than 0 "\:" ${RED} $LINK_DOWN ${NC}\n"
+printf "TOTAL Links Down,Investigate if more than 0  "\:" ${RED} $LINK_DOWN ${NC}\n"
 #echo "CURRENT RAM % : $RAM"
 #echo "HDD %: $HDD"
 #echo $MOUNT_RO
