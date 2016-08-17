@@ -1,0 +1,5 @@
+This is only applicable for juju version 1.25.
+This file was created for a specific project however with some modificaiton can be used for any juju deployments
+The AIM was to install and manage openstack with juju and maas in our client environment for NFV solution.
+
+Install Juju 
