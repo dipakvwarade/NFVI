@@ -1,0 +1,5 @@
+#this is to run sosreport on mutiple container and copy it to current node.
+
+juju run --service  $1 "sosreport -a --batch"
+juju run --service  $1 "chmod +777 /tmp/sosreport-juju-machine-*-lxc-*.tar.xz"
+for i in 3 4 5 ; do juju scp $1/$i:/tmp/sosreport-juju-machine-*-lxc-*.tar.xz .; done
