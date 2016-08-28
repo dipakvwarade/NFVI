@@ -1,0 +1,20 @@
+How to upgrade openssl package in ubuntu 14.0.4 
+The standard procedure to do that is: 
+(1) $ sudo apt-get update 
+(2a) Update the openssl packages only: 
+$ sudo apt-get install --only-upgrade libssl1.0.0 
+
+(2b) Alternatively, apply all pending package upgrades 
+$ sudo apt-get upgrade 
+
+(3) Once upgraded, the new library is not actually used by processes until they are restarted (the library code is loaded into memory on process startup). 
+The simplest way to achieve that is to restart the machine. You'll need to carefully upgrade and restart each machine one-at-a-time so that the highly available services can stabilize before restarting the next node. Any workloads running on the machine will also be impacted and require restarting after the node reboots. 
+Alternatively, you can identify all processes that need restarting and restart them manually. You can use the tool 'checkrestart' from the 'debian-goodies' package to do that. 
+
+For your reference on future cases such as this, in order to check yourself which package versions have which fixes there are 2 basic options 
+(1) Locate the package on packages.ubuntu.com and view the changelog: 
+http://packages.ubuntu.com/trusty/openssl 
+(2) Check the Ubuntu Security Notice or CVE database for the relevant CVE which details which package versions fixes the issue: 
+http://www.ubuntu.com/usn/ 
+http://people.canonical.com/~ubuntu-security/cve/
+Then compare the desired version against the installed version with 'dpkg -s packagename' 
