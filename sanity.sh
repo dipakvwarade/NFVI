@@ -7,7 +7,7 @@
 ####################################
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-echo "################################### SUMMERY #################################"
+echo "################################### SUMMERY FROM `uname -n` #################################"
 CPU=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 FREE_MEM=`free -m | grep Mem`
 FREE_SWAP=`free -m | grep Swap`
