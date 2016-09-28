@@ -75,3 +75,5 @@ maas@maas:~$ virsh -c qemu+ssh://admin@192.168.250.239/system list --all
  -     node5                          shut off
  -     node6                          shut off
 
+
+http://wiki.libvirt.org/page/SSHSetup
