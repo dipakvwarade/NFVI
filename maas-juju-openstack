@@ -4,3 +4,74 @@ juju ip - 10.0.0.6/24
 
  maas-region-admin createadmin --username=root --email=dipak@.com 
  pass - default
+
+  123  cd .ssh
+  124  ls
+  125  ls -tlr
+  126  ssh -vvvv dipak@192.168.250.239
+  127  ls -tlr
+  128  ls -tlr /var/lib/maas/.ssh/id_rsa
+  129  ls -ld /var/lib/maas/.ssh
+  130  chmod 755 /var/lib/maas/.ssh
+  131  ls -ld /var/lib/maas/.ssh
+  132  ssh -vvvv dipak@192.168.250.239
+  133  ls -ld /var/lib/maas
+  134  ls -ld /var/lib
+  135  ls -ld /var/
+  136  ssh -vvvvvvvvv dipak@192.168.250.239
+  137  file /var/lib/maas/.ssh/id_rsa
+  138  grep 'IdentityFile' /etc/ssh/ssh_config
+  139  vi /etc/ssh/ssh_config
+  140  sudo vi /etc/ssh/ssh_config
+  141  ssh -l dipak 192.168.250.239
+  142  ssh -vvvv dipak@192.168.250.239
+  143  ssh -vvvvvvvvvvvvvvvvvvvv dipak@192.168.250.239
+  144  ssh-keygen -f ~/.ssh/id_rsa -N ''
+  145  ssh-copy-id -i /var/lib/maas/.ssh/id_rsa  dipak@192.168.250.39
+  146  ssh-copy-id -i /var/lib/maas/.ssh/id_rsa  dipak@192.168.250.239
+  147  ssh 'dipak@192.168.250.239'
+  148  ssh-copy-id -i /var/lib/maas/.ssh/id_rsa  admin@192.168.250.239
+  149  ssh admin@192.168.250.239
+  150  virsh -c qemu+ssh://ubuntu@192.168.250.239/system list --all
+  151  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  152  virsh
+  153  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  154  virsh --debug -c qemu+ssh://admin@192.168.250.239/system list --all
+  155  virsh --debug 2 -c qemu+ssh://admin@192.168.250.239/system list --all
+  156  virsh --debug 20 -c qemu+ssh://admin@192.168.250.239/system list --all
+  157  virsh --debug 4 -c qemu+ssh://admin@192.168.250.239/system list --all
+  158  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  159  ssh admin@192.168.250.239
+  160  ssh admin@192.168.250.239
+  161  ssh admin@192.168.250.239
+  162  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  163  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  164  virsh -c qemu+ssh:///admin@192.168.250.239/system list --all
+  165  virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  166  strace virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+  167  historu
+  168  history
+maas@maas:~$ virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+ Id    Name                           State
+----------------------------------------------------
+ 4     maas                           running
+ -     juju                           shut off
+ -     node1                          shut off
+ -     node2                          shut off
+ -     node3                          shut off
+ -     node4                          shut off
+ -     node5                          shut off
+ -     node6                          shut off
+
+maas@maas:~$ virsh -c qemu+ssh://admin@192.168.250.239/system list --all
+ Id    Name                           State
+----------------------------------------------------
+ 4     maas                           running
+ -     juju                           shut off
+ -     node1                          shut off
+ -     node2                          shut off
+ -     node3                          shut off
+ -     node4                          shut off
+ -     node5                          shut off
+ -     node6                          shut off
+
