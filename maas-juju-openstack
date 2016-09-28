@@ -5,6 +5,10 @@ juju ip - 10.0.0.6/24
  maas-region-admin createadmin --username=root --email=dipak@.com 
  pass - default
 
+Image verificatio no maas
+
+/var/lib/maas/boot-resources/current/ubuntu/*
+
   123  cd .ssh
   124  ls
   125  ls -tlr
