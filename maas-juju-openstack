@@ -82,3 +82,4 @@ maas@maas:~$ virsh -c qemu+ssh://admin@192.168.250.239/system list --all
 
 http://wiki.libvirt.org/page/SSHSetup
 https://maas.ubuntu.com/docs/juju-quick-start.html
+http://dinosaursareforever.blogspot.ae/2014/06/manually-deploying-openstack-with_16.html
