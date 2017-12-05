@@ -3,9 +3,9 @@ newton on centos 7
 Static ip on host network 
 
 Create a file named /etc/sysconfig/network-scripts/ifcfg-eth0 as follows:
-DEVICE=eth0
-BOOTPROTO=none
+DEVICE=enp0s8
+BOOTPROTO=non
 ONBOOT=yes
 PREFIX=24
-IPADDR=192.168.2.203
-Restart network service: systemctl restart network
+IPADDR=192.168.56.101
+#Restart network service: systemctl restart network
