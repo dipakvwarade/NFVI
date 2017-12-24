@@ -9,3 +9,9 @@ ONBOOT=yes
 PREFIX=24
 IPADDR=192.168.56.101
 #Restart network service: systemctl restart network
+
+
+Enable password injection
+#vi /etc/nova/nova.conf
+[libvirt]
+inject_password=true
