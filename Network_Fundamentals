@@ -73,7 +73,7 @@ initially establishing the connection; and then renegotiate the window size duri
 increasing the size until it reaches the maximum windows size of 65,535 or until error occure.
 
 
-                                    Connection establishment and termination 
+                                                  Connection establishment
 
 Connection establishment between two devices is the process of initializing sequence and acknowledgement fields and agreeing 
 port number and window size.
@@ -93,5 +93,18 @@ port number and window size.
                                                             SYN
             
        
-
-
+                                                
+                                                
+                                                Connection Termination 
+                                                
+                                             Client                     Server
+                                             --------------------------->
+                                                 ACK,FIN, SEQ=1000
+                                             <---------------------------
+                                                 ACK,ACK = 1001
+                                             <---------------------------
+                                             ACK,FIN ACK = 1001 , SEQ=1470
+                                             --------------------------->
+                                                 ACK,ACK = 1471
+                                             
+                                             
