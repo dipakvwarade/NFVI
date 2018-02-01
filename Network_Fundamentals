@@ -108,3 +108,53 @@ port number and window size.
                                                  ACK,ACK = 1471
                                              
                                              
+
+
+
+UDP  is connectionless protocol :)
+
+
+
+TCP/IP Internet layer 
+
+1. The web client sends an HTTP request.
+
+2. TCP encapsulates the HTTP request.
+
+3. IP encapsulates the transport segment into a packet, adding source and destination addresses.
+
+4. Lower layers process and send the request to the web server.
+
+5. The web server receives HTTP requests and sends a TCP acknowledgment back to the requesting web client.
+
+6. The web server sends the HTTP response down to the transport layer.
+
+7. TCP encapsulates the HTTP data.
+
+8. IP encapsulates the transport segment into a packet, adding source and destination addresses.
+
+9. Lower layers process and send the response to the requesting web client.
+
+10. The requesting web client sends an acknowledgment back to the web server.
+
+
+
+
+
+DEVICES
+
+Switches  - Switching, security and segment
+
+1. Access Switches  - Facilitate the connection of end device to the network.
+2. Distribution switches - Recive data from Access switches and forward the data to Core switches.
+3. Core switches - Backbone, will handle majority of data in switching LAN.
+
+
+Routers - Primary devices to interconnect network like LAN , WAN and WLAN.
+
+
+
+
+
+
+
