@@ -1,1 +1,16 @@
 
+Open Standard Interconnection (OSI) and TCP/IP models
+
+OSI model pricipally serves as tool for explaining networking concepts and troubleshooting.
+
+All  ----> Application
+People ----> Presentation
+Seems ----> Session
+To ----> Transport
+Need ----> Network
+Data ----> Data link
+Processing ---->Physical  
+
+
+
+
