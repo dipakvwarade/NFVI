@@ -175,6 +175,22 @@ Is ethernet P2P link between Ethernet switch interface and Ethernet interface on
 carrying the traffic of multiple VLAN over the single link.
 
 
+Classes of Addresses
 
+A,B,C,D and E
 
+D - Multicasting addresses
+E - Experiements 
 
+      8 Bit      8 Bit      8 Bit      8 Bit
+-----------------------------------------------
+A     Network     Host       Host       Host
+-----------------------------------------------
+B     Network     Network       Host       Host
+-----------------------------------------------
+C     Network     Network       Network       Host
+-----------------------------------------------
+D       Multicasting
+-----------------------------------------------
+E       Experiments
+-----------------------------------------------
