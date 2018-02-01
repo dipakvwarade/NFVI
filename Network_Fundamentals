@@ -37,42 +37,61 @@ UDP 16384–32767 - RTP-based voice (VoIP) and video
 
 
 
-Error recovery --> 
+                                          Error recovery --> 
 
 
 
-Server                  Client
+                                          Server                  Client
 
------------------------->=1000
-1000 byte of data, sequence
-
-
------------------------->=2000 (error)
-1000 byte of data, sequence
+                                          ------------------------>=1000
+                                          1000 byte of data, sequence
 
 
------------------------->=3000
-1000 byte of data, sequence
-
-<------------------------ = 2000
-No data , Ack 
-
------------------------->=2000 
-1000 byte of data, sequence
-
-<------------------------ = 4000
-No data , Ack 
+                                          ------------------------>=2000 (error)
+                                          1000 byte of data, sequence
 
 
+                                          ------------------------>=3000
+                                          1000 byte of data, sequence
 
+                                          <------------------------ = 2000
+                                          No data , Ack 
 
+                                          ------------------------>=2000 
+                                          1000 byte of data, sequence
+
+                                          <------------------------ = 4000
+                                          No data , Ack 
 
 
 
 
-Flow Control 
+                                                Flow Control 
 
-TCP handles the Flow control through the process called windowing. the two end devices negotiate the window size when initially establishing the connection;
-and then renegotiate the window size during the life of connection, increasing the size until it reaches the maximum windows size of 65,535 or until error occure.
+TCP handles the Flow control through the process called windowing. the two end devices negotiate the window size when 
+initially establishing the connection; and then renegotiate the window size during the life of connection, 
+increasing the size until it reaches the maximum windows size of 65,535 or until error occure.
+
+
+                                    Connection establishment and termination 
+
+Connection establishment between two devices is the process of initializing sequence and acknowledgement fields and agreeing 
+port number and window size.
+
+                                                      Three way connection 
+
+
+                                                Client                    Server 
+
+                                                ---------------------------->
+                                                            SYN
+
+                                                <----------------------------
+                                                            SYN ACK
+
+                                                ---------------------------->
+                                                            SYN
+            
+       
 
 
