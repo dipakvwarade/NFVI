@@ -153,7 +153,15 @@ Switches  - Switching, security and segment
 Routers - Primary devices to interconnect network like LAN , WAN and WLAN.
 
 
+L2/L3 switching 
 
+L2 Switching - based on MAC 
+L3 switching - MAC & IP 
+
+
+
+Half Duplex - Unidirectional communication at a time.
+Full Duplex - Bidirectional communication (send/recieve) simoultaneously 
 
 
 
