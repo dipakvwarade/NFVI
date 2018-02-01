@@ -12,5 +12,67 @@ Data ----> Data link
 Processing ---->Physical  
 
 
+TCP/IP layer functions
+
+Application ----> DNS, DHCP, TELNET,SMTP,POP3,HTTP,FTP,SNMP   - Represents data to the user and controls dialogue
+Transport ----> TCP,UDP  - Support communication between diversed devices
+Internet ----> IP,ARP,ICMP - determine the best path through the network
+Network Access ----> Ethernet, Frame Ready - Control HW devices and media
+
+Port numbers
+
+TCP   20 - FTP
+TCP   21 - FTP control 
+TCP   22 - SSH 
+TCP   23 - telnet 
+TCP   25 - SMTP
+TCP,UDP   53 - DNS 
+UDP   67,68 - DHCP
+UDP   69 - TFTP
+TCP   80 - http
+TCP  110 - POP3
+UDP 161 - SNMP
+TCP 443 - https
+UDP 16384–32767 - RTP-based voice (VoIP) and video
+
+
+
+Error recovery --> 
+
+
+
+Server                  Client
+
+------------------------>=1000
+1000 byte of data, sequence
+
+
+------------------------>=2000 (error)
+1000 byte of data, sequence
+
+
+------------------------>=3000
+1000 byte of data, sequence
+
+<------------------------ = 2000
+No data , Ack 
+
+------------------------>=2000 
+1000 byte of data, sequence
+
+<------------------------ = 4000
+No data , Ack 
+
+
+
+
+
+
+
+
+Flow Control 
+
+TCP handles the Flow control through the process called windowing. the two end devices negotiate the window size when initially establishing the connection;
+and then renegotiate the window size during the life of connection, increasing the size until it reaches the maximum windows size of 65,535 or until error occure.
 
 
