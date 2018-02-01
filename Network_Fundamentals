@@ -166,3 +166,15 @@ Full Duplex - Bidirectional communication (send/recieve) simoultaneously
 
 
 
+VLAN Concept
+
+Creates multiple broadcast domains by putting some interfaces into one VLAN and other interfaces into other VLANs.
+
+VLAN trunk 
+Is ethernet P2P link between Ethernet switch interface and Ethernet interface on another device (Router or a Switch)
+carrying the traffic of multiple VLAN over the single link.
+
+
+
+
+
