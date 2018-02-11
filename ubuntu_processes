@@ -10,3 +10,10 @@ list processe s# ps  aux
 pstree
 parrent child relationship # ps fx 
 
+list all signals # kill -l
+
+kill -1 <pid> - reload the config
+kill -15 <pid> and kill <pid> is the same, sends a kill signal to process.
+kill -9 <pid> will never speak to process, its directly interact with kernel and kill the process.
+pkill <process name> guess what ? ? 
+killall guess what ? 
