@@ -136,6 +136,20 @@ neutron security-group-rule-list
 nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
 
 
+## Network namespaces
+
+ip netns list
+ip netns exec qdhcp-7d3a9245-6837-4151-a0e2-6f5c9b50ee21 ping 10.1.0.3
+neutron security-group-rule-create --direction ingress --ethertype IPv4 --protocol tcp --port-range-min 22 --port-range-max 22 --remote-ip-prefix 0.0.0.0/0 default
+
+##No ip for new instance
+neutron net-list
+neutron net-create private
+neutron subnet-create --name private-subnet private 10.2.0.0/28 
+nova list
+
+Quotas
+quota_floatingip in /etc/neutron/neutron.conf 
 
 
 
