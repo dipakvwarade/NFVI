@@ -101,3 +101,5 @@ logs
  registry.log
  
  Log level # /etc/glance/glance-api.conf   From oslo.log section. To turn on debugging, simply set debug = true
+
+What changed in 5 min in /var/log ## find . -iname "*.log" -mmin -1 -printf '%T+ %p\n' | sort -r
