@@ -1,0 +1,8 @@
+
+MQ 
+
+rabbitmqctl status
+rabbitmqctl list_queues
+rabbitmqctl list_exchanges
+
+rabbitmqctl list_exchanges name type durable policy
