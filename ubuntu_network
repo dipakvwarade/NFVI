@@ -1,2 +1,12 @@
 tmp ip assignment # ifconfig eth0 192.168.1.10 netmask 255.255.255.0
+route add # route add default gw 192.168.1.1 eth0
+remove ip settings# ip addr flush eth0
+
+vi /etc/network/interfaces or /etc/network/interfaces.d/*.cfg
+
+auto eth0
+iface eth0 inet static    #makes the IP address static
+address 192.168.1.10     #set a static IP address
+netmask 255.255.255.0     #set a netmask for the IP address above
+gateway 192.168.1.1       #set the default gateway
 
