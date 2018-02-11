@@ -29,3 +29,32 @@ openstack --debug project list
 start keystone only if required 
 sudo -u keystone /usr/local/bin/keystone-all --config-file=/etc/keystone/keystone.conf  --log-file=/var/log/keystone/keystone.log
 
+
+
+500 Internal Server Error
+
+mostly db error
+ /var/log/keystone/keystone.log will show DBConnectionError
+ 
+Check  keystone.conf # [database] connection = mysql://keystone:keystone@mydbserver.com/keystone
+
+mysql -u keystone -p -h mydbserver.com keystone  If no output , you might need to initialize your database ##keystone-manage db_sync
+
+
+Service endpoints
+
+openstack endpoint show keystone (check for admin url ; generally runs at 35357 )
+
+
+Invalid command 'WSGIDaemonProcess', perhaps misspelled or defined by a module not included in the server configuration
+You can install mod_wsgi as follows: apt-get install libapache2-mod-wsgi
+
+
+
+
+
+### GLANCE 
+
+
+
+
