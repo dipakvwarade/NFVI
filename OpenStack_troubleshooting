@@ -38,6 +38,11 @@ mostly db error
  
 Check  keystone.conf # [database] connection = mysql://keystone:keystone@mydbserver.com/keystone
 
+What has been changed in last 5 min 
+
+find . -iname "*.log" -mmin -1 -printf '%T+ %p\n' | sort -r
+
+
 mysql -u keystone -p -h mydbserver.com keystone  If no output , you might need to initialize your database ##keystone-manage db_sync
 
 
