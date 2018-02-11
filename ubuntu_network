@@ -10,3 +10,41 @@ address 192.168.1.10     #set a static IP address
 netmask 255.255.255.0     #set a netmask for the IP address above
 gateway 192.168.1.1       #set the default gateway
 
+
+
+##DHCP
+dhcp #apt-get install dhcp3-server
+
+ set interface # /etc/default/isc-dhcp-server 
+configuration# /etc/dhcp/dhcpd.conf
+
+## tcpdump ##
+
+check interfaces #tcpdump -D
+listen packets on eth0 #tcpdump -i eth0 
+listen 20 packets on eth0 #tcpdump -i eth0 -c20 
+
+save .pcap #tcpdump -w tcpdump.pcap -i eth0 
+
+read the pcap # tcpdump -tttt -r tcpdump.pcap
+
+read udp only # tcpdump -i eth0 udp [port 22]
+
+between t wo host# tcpdump -w tcp2hosts.pcap -i eth0 dst 192.168.1.5 and port 22
+
+
+## Binding || virtual nics|| ip alias
+
+vi /etc/network/interfaces
+auto eth0:0
+iface eth0:0 inet static
+address 192.168.1.104
+netmask 255.255.255.0
+
+auto eth0:1
+iface eth0:1 inet static
+address 192.168.1.240
+netmask 255.255.255.0
+
+sudo ifup eth0:0
+sudo ifuo eth0:1
