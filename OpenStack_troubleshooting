@@ -4,5 +4,22 @@ MQ
 rabbitmqctl status
 rabbitmqctl list_queues
 rabbitmqctl list_exchanges
-
 rabbitmqctl list_exchanges name type durable policy
+rabbitmqctl list_policies
+rabbitmqctl list_connections
+
+Keystone||5000
+
+check API version in keystone-paste.ini
+
+check keystone service 
+pgrep -l keystone
+ps -aux | grep keystone
+
+users 
+keystone user-list
+openstack user list
+openstack --debug project list
+
+
+
