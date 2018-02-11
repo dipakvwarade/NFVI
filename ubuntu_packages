@@ -1,0 +1,10 @@
+installed packages
+
+apt search openstack | less
+apt list 
+apt show nova-api
+
+
+watch command
+
+watch -n 3 nova list
