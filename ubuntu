@@ -96,4 +96,9 @@ $ sudo apt-get install conjure-up
 $ conjure-up openstack
 
 
+###Storage
 
+du -hsc * 
+
+disk issues with ncdu|apt-get install ncdu 
+#ncdu
