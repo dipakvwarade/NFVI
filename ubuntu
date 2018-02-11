@@ -1,1 +1,35 @@
 
+KVM virtual machines.
+
+#sudo apt-get install kvm cloud-utils genisoimage bridge-utils
+
+CPU check #kvm-ok
+ubuntu 14.4 cloud image#wget http://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img -O trusty.img.dist
+uncompress#qemu-img convert -O qcow2 trusty.img.dist trusty.img.orig
+Copyonwrite to protect the original image #qemu-img create -f qcow2 -b trusty.img.orig trusty.img
+
+Cloud-config|user-data#sudo vi user-data
+#cloud-config
+password: password
+chpasswd: { expire: False }
+ssh_pwauth: True
+
+Disk creation |$ cloud-localds seeder.img user-data
+
+
+Network bridge 
+vi /etc/network/interfaces. or /etc/network/interfaces.d/x.cfg
+auto eth0
+iface eth0 inet manual
+
+auto br0
+iface br0 inet dhcp
+    bridge_ports eth0
+
+Restart network #service networking restart
+
+start KVM VM # kvm -netdev bridge,id=net0,br=br0 -net user -m 256 -nographic -hda trusty.img -hdb seeder.img
+
+Once you get the shll change passwd of ubuntu user and remove the cloud-init.
+
+next start of VM # kvm -netdev bridge,id=net0,br=br0  -hda trusty.img  -m 256 -vnc 0.0.0.0:1 -daemonize
