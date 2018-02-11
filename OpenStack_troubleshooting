@@ -16,10 +16,16 @@ check keystone service
 pgrep -l keystone
 ps -aux | grep keystone
 
+/var/log/keystone/keystone.log
+
+check which process is running on ports # lsof -i :35357 -S
+
 users 
 keystone user-list
 openstack user list
 openstack --debug project list
 
 
+start keystone only if required 
+sudo -u keystone /usr/local/bin/keystone-all --config-file=/etc/keystone/keystone.conf  --log-file=/var/log/keystone/keystone.log
 
