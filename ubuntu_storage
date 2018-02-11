@@ -4,3 +4,16 @@ du -hsc *
 
 disk issues with ncdu|apt-get install ncdu 
 #ncdu
+
+
+ inodes
+ df -i
+Filesystem            Inodes   IUsed   IFree IUse% Mounted on
+/dev/xvda1           1310720  1310720        0  100% /
+tune2fs -l /dev/xvda1 | grep -i inode
+
+for i in /*; do echo $i; find $i |wc -l; done
+
+run below command on the directory holding lots of inodes.
+for i in /usr/*; do echo $i; find $i |wc -l; done
+
