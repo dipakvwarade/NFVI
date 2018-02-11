@@ -1,0 +1,16 @@
+htop
+pidstat -C mysql
+pidstat -p 1122
+systate | mpstat |sar -u -p All 
+us: Time spent in running user space processes. This reflects the CPU consumption by your application.
+sy: Time taken by system processes. A higher number here can indicate too many processes, and the CPU is spending more time process scheduling.
+ni: Time spent with user space processes that are assigned with execution priority (nice value).
+id: Indicates the time spent in idle mode, where the CPU is doing nothing.
+wa: Waiting for IO. A higher value here means your CPU is spending too much time handling IO operations. Try improving IO performance or reducing IO at application level.
+hi/si: Time spent in hardware interrupts or software interrupts.
+st: Stolen CPU cycles. The hypervisor assigned these CPU cycles to another virtual machine. If you see a higher number in this field, try reducing the number of virtual machines from the host. If you are using a cloud service, try to get a new server, or change your service provider.
+
+vmstat 
+collectd
+
+http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
