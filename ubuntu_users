@@ -1,0 +1,7 @@
+sudo adduser user2
+
+sudo deluser user2
+sudo rm -r /home/user2
+
+sudo addgroup groupname
+sudo delgroup groupname
