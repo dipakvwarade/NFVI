@@ -1,2 +1,12 @@
 $$ process id 
 $PPID parent process id
+get  pid from process name # pidof apache2 |ps -C <process> | pgrep <process name>
+
+fork - create identical copy of itself and copy all memory.
+exec - replace the parrent process
+
+list processe s# ps  aux
+
+pstree
+parrent child relationship # ps fx 
+
