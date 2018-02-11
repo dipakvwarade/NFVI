@@ -131,6 +131,9 @@ log_dir in the neutron.conf
 you will want to set verbose to True in the /etc/neutron/neutron.conf file
 
 
+neutron security-group-list
+neutron security-group-rule-list
+nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
 
 
 
