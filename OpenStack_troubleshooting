@@ -70,7 +70,15 @@ mysql -u db_user -p -h my.db.server glance
 Check whether user has required previleges
 #show grants for 'glance'@'localhost';
 
+##show databases; glance should be there
+##show tables;  if returns empty list ## reinitialsed the db ## glance-manage db_sync
 
+less /etc/glance/glance-api.conf | grep ^connection
+
+check the user #openstack user show glance
+check the roles #openstack user role list --project service glance
+
+reset password if required ## openstack user set --password-prompt glance
 
 
 
