@@ -33,3 +33,67 @@ start KVM VM # kvm -netdev bridge,id=net0,br=br0 -net user -m 256 -nographic -hd
 Once you get the shll change passwd of ubuntu user and remove the cloud-init.
 
 next start of VM # kvm -netdev bridge,id=net0,br=br0  -hda trusty.img  -m 256 -vnc 0.0.0.0:1 -daemonize
+
+virt-manager gui#apt-get install virt-manager
+
+
+Virsh
+
+getting ready # $ sudo apt-get update $ sudo apt-get install -y qemu-kvm libvirt-bin virtinst
+package to support cloud-init # sudo apt-get install genisoimage
+add user to libvirtd#$ sudo adduser ubuntu libvirtd $ newgrp libvirtd
+
+download the image and prepare
+
+$ mkdir ubuntuvm && cd ubuntuvm
+$ wget -O trusty.img.dist \
+http://cloud-images.ubuntu.com/releases/trusty/release/ubuntu-14.04-server-cloudimg-amd64-disk1.img 
+$ qemu-img convert -O qcow2 trusty.img.dist trusty.img.orig
+$ qemu-img create -f qcow2 -b trusty.img.orig trusty.img
+
+cloud-init#
+
+$ sudo vi user-data
+#cloud-config
+password: password
+chpasswd: { expire: False }
+ssh_pwauth: True
+$ sudo vi meta-data
+instance-id: ubuntu01; 
+local-hostname: ubuntu
+$ genisoimage -output cidata.iso -volid cidata -joliet \
+-rock user-data meta-data
+
+Create a new machine 
+
+$ virt-install --import --name ubuntu01  --ram 256 --vcpus 1 --disk trusty.img --disk cidata.iso,device=cdrom  --network bridge=virbr0 \
+--graphics vnc,listen=0.0.0.0 --noautoconsole -v
+
+VNC port 5900
+
+port forward # ssh kvm_hostname_or_ip -L 5900:127.0.0.1:5900 #vncviewer localhost:5900
+
+virsh commands  to manage the vm
+virsh list --all # or virsh --connect qemu:///system list
+virsh console ubuntu01
+virsh shutdown ubuntu01
+dump in xml format#virsh dumpxml machine
+
+installation from iso
+sudo virt-install -n ubuntu -r 1024 \
+--disk path=/var/lib/libvirt/images/ubuntu01.img,bus=virtio,size=4 \
+-c ubuntu-16.04-server-i386.iso \
+--network network=default,model=virtio
+--graphics vnc,listen=0.0.0.0 --noautoconsole -v
+
+uvtool#apt-get install uvtool
+start vm #uvt-kvm create virtsys01
+get the ip#uvt-kvm ip virtsys01
+
+
+conjure lxd based, juju managed #$ sudo apt-get update
+$ sudo apt-get install conjure-up
+$ conjure-up openstack
+
+
+
