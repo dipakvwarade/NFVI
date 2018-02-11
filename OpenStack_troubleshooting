@@ -103,3 +103,41 @@ logs
  Log level # /etc/glance/glance-api.conf   From oslo.log section. To turn on debugging, simply set debug = true
 
 What changed in 5 min in /var/log ## find . -iname "*.log" -mmin -1 -printf '%T+ %p\n' | sort -r
+
+grep -irE 'critical|error|warning|failure' /var/log/glance/api.log
+
+
+
+
+
+#####Neutron###### 
+
+pgrep –l neutron
+check if neutron agents are running ### neutron agent-list 
+When the agent is up and running, the alive column will have :-), and when the agent is not alive, the value will be xxx.
+
+
+if required ## start neutron-openvswitch
+
+Start agent using below command ### sudo -u neutron neutron-openvswitch-agent --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugins/ml2/ml2_conf.ini --log-file=/var/log/neutron/openvswitch-agent.log
+
+
+Logs 
+
+/var/log/neutron/
+less /var/log/neutron/server.log | grep ERROR
+ps –aux | grep --log
+log_dir in the neutron.conf
+you will want to set verbose to True in the /etc/neutron/neutron.conf file
+
+
+
+
+
+
+
+
+
+
+
+
