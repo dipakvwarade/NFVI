@@ -80,5 +80,7 @@ check the roles #openstack user role list --project service glance
 
 reset password if required ## openstack user set --password-prompt glance
 
+/etc/glance/glance-api.conf there should be a keystone_authtoken stanza. Under that stanza, if auth_plugin = password
+
 
 
