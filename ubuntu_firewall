@@ -1,0 +1,19 @@
+get help # ufw -h 
+enable #ufw enable 
+disable#ufw disable
+#ufw default deny 
+#ufw default allow
+Logging ## ufw logging on
+Logging ## ufw logging off
+open DNS # ufw allow 53 
+ufw allow proto tcp from 192.168.1.0/24 to any port 80
+ufw allow proto tcp from 192.168.1.0/24 to any port 22 
+
+remove the rule 
+sudo ufw delete deny proto tcp from 192.168.1.111 to any port 25
+sudo ufw allow ssh
+sudo ufw allow www
+sudo ufw allow https
+sudo ufw default deny
+sudo ufw enable
+sudo ufw status
