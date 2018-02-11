@@ -151,6 +151,15 @@ nova list
 Quotas
 quota_floatingip in /etc/neutron/neutron.conf 
 
+Neutron tools 
+
+ovs-vsctl  - configure and query ovs 
+ovs-vsctl show - see the content of config db
+
+check routes ## ip r s 
+## ip netns
+## ip neigh
+
 
 
 
