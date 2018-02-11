@@ -14,3 +14,49 @@ vmstat
 collectd
 
 http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/proc.html
+
+Hardware|lshw
+
+
+NEtwork 
+
+ifconfig -s
+netstat -tulpen 
+ip s r 
+lsof -i 
+lsof -iTCP -sTCP:LISTEN
+tcpdump -i eth0
+tcpdump -i eth0 -w tcpdump.log -c 100
+tcpdump -r tcpdump.log
+sar -n ALL 1 5
+
+nethogs: Monitors per process bandwidth utilization
+ntop / iftop: Top for network monitoring
+iptraf: Monitors network interface activity
+vnstat: Network traffic monitoring with logging
+ethtool: Queries and configures network interfaces
+nicstat / ifstat / nstat: Network interface statistics
+tracepath: Traces a network route to destination host
+
+
+
+storage 
+
+vmstat -D
+lsblk
+dstat -d -D total,sda
+lsof -c sshd
+iostat
+
+
+Benchmarking 
+
+sysbench
+
+sysbench --test=cpu --num-threads=4 \
+--cpu-max-prime=20000 run
+sysbench --test=memory --memory-block-size=1M \
+--num-threads=2 \
+--memory-total-size=100G --memory-oper=read run
+sysbench --test=fileio --file-total-size=15G \
+--file-num=15 prepare
