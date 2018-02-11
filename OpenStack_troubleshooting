@@ -167,9 +167,14 @@ check routes ## ip r s
 
 
 
+## Compute Troubleshooting
 
-
-
-
+ps –aux | grep nova-
+    nova-api
+    nova-scheduler
+    nova-conductor
+    nova-compute
+    
+    if nova api is not running on ubuntu system user #  start nova-api
 
 
