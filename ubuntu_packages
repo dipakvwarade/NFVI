@@ -4,10 +4,9 @@ apt search openstack | less
 apt list 
 apt show nova-api
 
-
 watch command
-
 watch -n 3 nova list
 
 
-remove and purge the configuration # apt-get remove --purge <package>
+Remove and purge the configuration # apt-get remove --purge <package>
+Search the package ## apt-cache search <package> # apt-cache show <package>
