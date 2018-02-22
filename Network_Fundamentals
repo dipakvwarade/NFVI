@@ -194,3 +194,13 @@ E - Experiements
                               -----------------------------------------------
                               E       Experiments
                               -----------------------------------------------
+
+STP - 
+Spanning Tree Protocol (STP) is a Layer 2 protocol that runs on bridges and switches. The specification for STP is IEEE 802.1D. The main purpose of STP is to ensure that you do not create loops when you have redundant paths in your network.
+
+LLDP (Link layer discovery protocols)- 
+Used by network devices to advertise their identity,capabilities and neighors on local area network.
+
+
+
+
