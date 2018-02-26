@@ -1,0 +1,126 @@
+ONF Certified SDN Engineer Examination Blueprint
+ Domain	 	% of Exam
+ 	 	 
+1. SDN Concepts	 	10%
+2. OpenFlow	 	20%
+3. SDN Architecture and Ecosystem	 	15%
+4. SDN Implementation and Migrations	 	25%
+5. Troubleshooting and Testing	 	15%
+6. SDN Security	 	10%
+7. SDN Futures	 	5%
+ 
+Domain 1: SDN Concepts
+Describe how SDN solves network issues and implements use cases.
+•	SDN Value Proposition
+•	Implementing the SDN Forwarding Plane
+•	Implementing the SDN Control Plane
+•	Evolution of Switches and Control Plane
+•	Protocol Limitations that SDN solves
+•	Inadequacies in Networks today
+•	SDN Devices and Device Functions
+•	Application workflow
+•	Programmability (Netconf, Yang, REST)
+•	NFV and SDN Use Cases
+ 
+Domain 2: OpenFlow®
+Describe and list the OpenFlow® Protocol message structures, features, and headers.
+•	Message Types and Headers
+•	Basic Operation/Packet Matching
+•	Proactive vs Reactive Flows
+•	Statistics/Counters
+•	Flow Timers
+•	Group Tables
+•	IPv6
+•	Optical Port Properties
+•	Port groups and Mapping
+•	Message Structures
+•	Instructions and actions
+•	OpenFlow® Management and Configuration Protocol (OF-Config, OAM, OFDPA, OVSDB, etc.)
+•	Action Lists, Sets and Buckets
+•	Detailed Packet Matching/TLV’s
+•	Sub-Actions
+•	Metering
+ 
+Domain 3: SDN Architecture and Ecosystem
+Identify SDN architectural component design, API principals and SDN network design.
+•	Hybrid switch modes
+•	Reactive versus Proactive Applications
+•	Common API Primitives
+•	API Communication Protocols (REST, RESTCONF, JAVA)
+•	Controllers 
+o	Open Source versus Vendor Specific
+o	Anatomy of a Controller
+o	Controller Redundancy
+o	Imperative/Declarative Paradigms
+o	Topology Discovery
+o	NBI Models/Implementations
+•	Software vs Hardware switches
+•	Managing Scalability
+ 
+Domain 4: SDN Implementations and Migrations
+List various SDN migration strategies and deployment options and considerations
+•	Controller Placement Design and Considerations/Implementations
+•	Application Considerations
+•	Scalability Considerations
+•	TCAM Limitations
+•	Simplifying OpenFlow® with Table Type Patterns (TTP’s)
+•	Controller Clustering
+•	Controller Federations
+•	Hierarchical Controllers
+•	Migration Strategies Greenfield/Hybrid/Mixed
+•	Migration Approaches 
+o	Direct
+o	Phased
+•	Migration Planning
+•	Migration Best Practices
+•	Implications of a mixed network
+•	Carrier Ethernet Network Virtualization
+•	Packet-Optical Integration
+•	Optical Network Service Provider Data Center Interconnection (DCI)
+•	OpenStack and SDN Controller interaction
+ 
+Domain 5: Troubleshooting and Testing
+Given a scenario, demonstrate knowledge of how to configure and monitor and test an SDN Network.
+•	Troubleshooting Flow Table Scenarios
+•	Reading Flow Table Entries
+•	Packet/Wireshark Decoding/Debugging
+•	REST Messaging Types/Wireshark
+•	Curl debugging
+•	Mininet set-up 
+o	ovs-ofctl
+o	mn sudo
+o	curl
+•	Description of the test program 
+o	Test Profiles
+o	Standards
+o	Specifications
+•	Performance Benchmarking
+•	Tool Sets 
+o	of-test
+o	wireshark dissector
+o	flowsim
+o	flowvisor 
+Domain 6: SDN Security
+Identify ways to secure SDN controllers and switches.
+•	Benefits to networks by SDN architecture
+•	TCP level secure channel/communication/session establishment between controller/switch
+•	In-Band and Out-of-Band management security considerations
+•	Controller HA
+•	The Implications of SDN on Network Security
+•	Securing the OpenFlow® Protocol
+•	Securing the OpenFlow® data plane
+•	Software Development Lifecycle
+•	Controller/Element Hardening
+•	Securing users in a Wi-Fi environment 
+Domain 7: SDN Futures
+List and describe SDN future projects and developments.
+•	Describe the purpose of Protocol Independent Forwarding (PIF) and P4, and other packet forwarding innovations beyond OpenFlow?
+•	Segment Routing
+•	Open Source Initiatives (ONF, ODL, Ryu, ONOS, OPNFV, OCP, ODCA, Open Config)
+•	TTP Use Cases
+•	Mobile traffic offload
+•	Pipeline Compiling
+•	Optical Extensions
+•	Security Extensions
+•	Wireless/Mobility Extensions 
+
