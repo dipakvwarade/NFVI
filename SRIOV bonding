@@ -4,5 +4,19 @@ nova's mentality of not exposing hypervisor details to the user: one won't be ab
 
 trust on vf is by default trust off i.e instance os cant overwrite libvirt's mac which result in not beeing able to move a MAC from one port to another during interface failure resulting in bond failure.
 yet it can be set manually # ip link set dev < device > vf <vf> trust on   
-Another option is to use fail_over_mac.
+Another option is to use fail_over_mac - fail_over_mac=active in bond option.
 
+#create network resources
+neutron net-create SRIOV1-vlan100 --provider:network_type vlan --provider:physical_network physnet1 --provider:segmentation_id 908 --shared --router:external
+neutron net-create SRIOV2-vlan100 --provider:network_type vlan --provider:physical_network physnet2 --provider:segmentation_id 908 --shared --router:external
+
+#Create Subnet 
+neutron subnet-create --name SRIOV1-vlan100-subnet SRIOV1-vlan100 192.168.2.0/24
+neutron subnet-create --name SRIOV2-vlan100-subnet SRIOV2-vlan100 192.168.2.0/24 
+
+#Create Ports 
+portid1=`neutron port-create SRIOV1-vlan100 --name SRIOV1-vlan100-port --binding:vnic-type direct  | awk '$2 == "id" {print $(NF-1)}'`
+portid2=`neutron port-create SRIOV2-vlan100 --name SRIOV2-vlan100-port --binding:vnic-type direct  | awk '$2 == "id" {print $(NF-1)}'`
+
+#Create VM
+openstack server create --flavor m1.medium  --image XYZ --nic port-id=$portid1 --nic port-id=$portid2 --key-name <mykey>  SRIOV_vm_vlan100
