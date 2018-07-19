@@ -20,3 +20,47 @@ portid2=`neutron port-create SRIOV2-vlan100 --name SRIOV2-vlan100-port --binding
 
 #Create VM
 openstack server create --flavor m1.medium  --image XYZ --nic port-id=$portid1 --nic port-id=$portid2 --key-name <mykey>  SRIOV_vm_vlan100
+
+
+#Bond Config
+
+#cat ifcfg-bond0
+DEVICE=bond0
+#BONDING_OPTS=mode=active-backup
+BONDING_OPTS=mode=active-backup fail_over_mac=active
+TYPE=Bond
+BONDING_MASTER=yes
+BOOTPROTO=none
+IPADDR=192.168.2.5
+PREFIX=24
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+NAME=bond0
+ONBOOT=yes
+
+# cat ifcfg-em1
+DEVICE="eth1"
+BOOTPROTO="none"
+BOOTPROTOv6="none"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+HWADDR=<>
+MASTER=bond0
+SLAVE=yes
+
+# cat ifcfg-em2
+DEVICE="eth2"
+BOOTPROTO="none"
+BOOTPROTOv6="none"
+ONBOOT="yes"
+TYPE="Ethernet"
+USERCTL="yes"
+PEERDNS="yes"
+IPV6INIT="no"
+HWADDR=<>
+MASTER=bond0
+SLAVE=yes
