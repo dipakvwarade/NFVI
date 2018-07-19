@@ -1,0 +1,3 @@
+List dependancies 
+
+yum -q deplist python-2.7.5-58.el7.x86_64
