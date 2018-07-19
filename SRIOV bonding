@@ -1,0 +1,8 @@
+19/07/2018
+the only way to get VFs belonging to 2 different PFs on the same VLAN is to create 2 distinct networks with distinct provider:physical_network and physical_device_mappings set to the different PFs.
+nova's mentality of not exposing hypervisor details to the user: one won't be able to to choose the exact PF.
+
+trust on vf is by default trust off i.e instance os cant overwrite libvirt's mac which result in not beeing able to move a MAC from one port to another during interface failure resulting in bond failure.
+yet it can be set manually # ip link set dev < device > vf <vf> trust on   
+Another option is to use fail_over_mac.
+
