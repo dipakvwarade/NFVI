@@ -64,3 +64,6 @@ IPV6INIT="no"
 HWADDR=<>
 MASTER=bond0
 SLAVE=yes
+
+#Check the status 
+ip link ls dev bond0 ; cat /proc/net/bonding/bond0 | egrep 'Slave|Status|Failure|HW'
