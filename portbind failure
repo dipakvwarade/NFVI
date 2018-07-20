@@ -1,0 +1,8 @@
+Check for network agents 
+#openstack network agent list
+
+physical device mapping 
+#grep physical_device /etc/neutron/plugins/ml2/sriov_agent.ini
+
+you can get it using the below command too
+#openstack network agent show 0443d551-03c7-4f67-9199-331bce4b4e17
