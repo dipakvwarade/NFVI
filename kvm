@@ -1,1 +1,7 @@
 
+##Add memory to kvm guest
+
+ virsh setmem <vm name> 16G --live
+ virsh setmaxmem <vm name> 16G --config
+ virsh setmem <vm name> 16G --config
+ 
