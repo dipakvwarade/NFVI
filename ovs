@@ -7,3 +7,5 @@ ovs-vsclt add-br br0
  ovs-ofctl show br-ex
  ovs-ofctl dump-flows br-ex
  ovs-ofctl add-flow demo-br0 'table=2,priority=4,in_port=1,actions=output:5'
+ ovs-vsctl list-ports
+ 
