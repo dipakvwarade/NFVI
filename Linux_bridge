@@ -1,0 +1,18 @@
+bridge-utils 
+brctl addbr
+brctl addif
+ip addr add
+brctl show 
+ip link set dev
+
+cat ifcfg-br0
+DEVICE=br0
+TYPE=Bridge
+IPADDR=
+PREFIX=
+ONBOOT=yes
+
+cat ifcfg-eth0
+DEVICE=eth0
+BRIDGE=br0
+ONBOOT=yes
