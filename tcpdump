@@ -1,0 +1,11 @@
+tcpdump -i eth0 # capture packets on eth0
+tcpdump -c 10 -i eth0  # capture 10 pac on eth0
+tcpdump -D # list interfaces 
+tcpdump -w xyz.pcap  -i eth0  # save pacture into zyx.pcap
+tcpdump -r xyz.pcap  # read packets from xyz.pcap
+tcpdump -n -i eth0  # onlt IP address packets 
+tcpdump -i eth0 tcp # only tcp packets 
+tcpdump -i eth0 port 22 # only port 22 packets 
+tcpdump -i eth0 src 10.10.5.10  # from source ip 
+tcpdump -i eth0 dst 10.10.10.10 # packets going to that ip 
+wireshark -r xyz.pcap
