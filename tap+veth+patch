@@ -1,0 +1,21 @@
+Tap simulate L2 link
+ip tuntap add dev tap0 mode tap  # add tap device   
+ovs-vsctl add-port br0 tap0 -- set interface tap0 type=internal  ## add tap0 to ovs bridge and set the type as internal 
+brctl addif br0 tap0  # add to linux bridge 
+assign ip to tap0 
+ip addr add ip/sub dev tap0
+ip tuntap del dev tap0 mode tap  #delete 
+
+veth - virtual patch cables 
+ip link add veth0 type veth peer name veth1 
+ ip link set up dev veth1
+ ip link set up dev veth0
+ ip link show
+ 
+ 
+ OVS Patch - Can be use for flat and vlan deployment ; GRE and VXLAN cant use ovs patches.
+ 
+ Creat e
+ ovs-vsctl add-port br0 patch0 \
+-- set interface patch0 type=patch \
+-- set interface patch0 options:peer=patch1
