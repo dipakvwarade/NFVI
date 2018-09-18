@@ -1,0 +1,23 @@
+repository for locally-mounted DVD on Red Hat Enterprise Linux 7
+# mount -o loop RHEL7.1.iso /mnt
+# mount /dev/sr0  /mnt
+# cp /mnt/media.repo /etc/yum.repos.d/rhel7dvd.repo
+# chmod 644 /etc/yum.repos.d/rhel7dvd.repo
+enabled=1
+baseurl=file:///mnt/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+[InstallMedia]
+name=DVD for Red Hat Enterprise Linux 7.1 Server
+mediaid=1359576196.686790
+metadata_expire=-1
+gpgcheck=1
+cost=500
+enabled=1
+baseurl=file:///mnt/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+# yum clean all
+# subscription-manager clean
+# yum  --noplugins list
+# yum  --noplugins update
