@@ -1,0 +1,9 @@
+ovs-vsclt add-br br0
+ ip addr flush dev eth0
+ ip addr add ip/sub dev br0
+ ovs-vsctl add-port br0 eth0
+ ip link set dev <> up 
+ 
+ ovs-ofctl show br-ex
+ ovs-ofctl dump-flows br-ex
+ ovs-ofctl add-flow demo-br0 'table=2,priority=4,in_port=1,actions=output:5'
