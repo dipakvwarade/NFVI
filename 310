@@ -1,0 +1,28 @@
+Create and work with virtual devices  
+  Implement and manage Linux bridges   
+  Implement and manage OpenvSwitch bridges
+  Implement and manage libVirt bridges
+Manage OpenStack networking agents
+  Provision tenant networks with DHCP agents
+  Enable the Load Balancer as a Service (LBAAS) and deploy instances using the LBAAS
+  Manage metadata agent
+  Manage metering agent
+Deploy IPv6 networks in OpenStack
+  Create a tenant network with IPv4 and IPv6
+  Attach an IPv6 floating IP to an instance
+  Provision OpenStack networks
+  Implement network namespaces
+  Provision tenant networks using VXLAN, VLAN, and GRE
+Implement distributed virtual routing (DVR)
+  Create a DVR router
+  Create instances that use the DVR router
+Tune network functions virtualization (NFV) performance
+  Deploy EPA
+  Tune cloud applications
+Implement NFV datapaths
+  Deploy OpenvSwitch Data Plane Development Kit (OVS-DPDK)
+  Configure Red Hat OpenStack Platform so that instances can use OVS-DPDK
+  Configure quality of service (QoS) limits
+Build software-defined networks with OpenDaylight
+  Implement OpenDaylight
+  Manage networks with OpenDaylight
