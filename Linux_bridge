@@ -16,3 +16,5 @@ cat ifcfg-eth0
 DEVICE=eth0
 BRIDGE=br0
 ONBOOT=yes
+
+bridge vlan show 
